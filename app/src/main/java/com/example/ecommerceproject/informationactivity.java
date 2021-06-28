@@ -146,34 +146,34 @@ public class informationactivity extends AppCompatActivity {
         cartmap.put("currentdate", cdate);
         cartmap.put("totalquantity",tvno.getText().toString());
         cartmap.put("totalrpice",totalprice);
-        //fc.collection("addtocart").document(auth.getCurrentUser().getUid()).collection("User")
-        //  .add(cartmap).addOnCompleteListener(new OnCompleteListener<DocumentReference>() {
-        //@Override
-        //public void onComplete(@NonNull Task<DocumentReference> task) {
-        //    Toast.makeText(informationactivity.this, "it is added to cart", Toast.LENGTH_SHORT).show();
-        //      finish();
-        //}
-        fc.collection("users")
-                .add(cartmap)
-                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                    @Override
-                    public void onSuccess(DocumentReference documentReference) {
+        fc.collection("addtocart").document(auth.getCurrentUser().getUid()).collection("users")
+         .add(cartmap).addOnCompleteListener(new OnCompleteListener<DocumentReference>() {
+        @Override
+        public void onComplete(@NonNull Task<DocumentReference> task) {
+          Toast.makeText(informationactivity.this, "it is added to cart", Toast.LENGTH_SHORT).show();
+             finish();
+        }
+        //fc.collection("users")
+          //      .add(cartmap)
+            //    .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+              //      @Override
+                //    public void onSuccess(DocumentReference documentReference) {
+//
+  //                      Toast.makeText(informationactivity.this, "it is added to cart", Toast.LENGTH_SHORT).show();
+    //                    Log.d(TAG, "DocumentSnapshot added with ID: " + documentReference.getId());
+      //              }
+        //        })
+               // .addOnFailureListener(new OnFailureListener() {
+                 //   @Override
+                   // public void onFailure(@NonNull Exception e) {
+                     //   Log.w(TAG, "Error adding document", e);
 
-                        Toast.makeText(informationactivity.this, "it is added to cart", Toast.LENGTH_SHORT).show();
-                        Log.d(TAG, "DocumentSnapshot added with ID: " + documentReference.getId());
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Log.w(TAG, "Error adding document", e);
-
-                    }
-                });
+                    //}
+                //});
 
 
-    }
-}
+    });
+}}
 
 
 

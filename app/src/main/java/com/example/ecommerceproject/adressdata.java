@@ -2,7 +2,7 @@ package com.example.ecommerceproject;
 
 public class adressdata {
     String address;
-    Boolean clickaddress
+    Boolean clickaddress;
 
     public adressdata() {
     }
